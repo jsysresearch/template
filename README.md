@@ -1,10 +1,10 @@
 # JSys paper template
 
-TEMPLATE for the Journal of Systems Research, written for submissions to
+Paper template for the [Journal of Systems Research (Jsys)](http://jsysr.org/), written for submissions to
 JSys by Vijay Chidambaram.
 
-This was originally the USENIX template, which was adapted with USENIX's
-permission. Thanks!
+This template was adapted from the USENIX template with their permission. Thanks a lot!
 
-__Current version__
-- 1.0: First release.
+## Version
+
++ 1.0: First release (current)
