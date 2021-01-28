@@ -1,5 +1,6 @@
-% jsys.sty - to be used with latex2e for USENIX.
-% To use this style file, look at the template jsys.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% jsys.sty - JSys style file
+% For the use this style file, refer to the template: jsys.tex
 %
 % v1.0, 12/31/2020
 %
@@ -8,7 +9,9 @@
 % file with permission from Casey Henderson.
 %
 % This is a double column format with slight modifications for the
-% Journal of Systems Research
+% Journal of Systems Research (JSys)
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \if@twocolumn\else\input twocolumn.sty\fi
 \usepackage{mathptmx}  % times roman, including math (where possible)
@@ -19,12 +22,8 @@
 \usepackage{pslatex}
 
 % appearance
-\usepackage[kerning,spacing]{microtype} % more compact and arguably nicer
-
-% Uncomment the following line if you want the columns of the last page 
-% equal in size. But note that doing so may cause issues with some 
-% document-generating tools.
-% \usepackage{flushend}
+% more compact (and arguably nicer) font
+\usepackage[kerning,spacing]{microtype} 
 
 % refs and bib
 \usepackage{cite}               % order multiple entries in \cite{...}
@@ -41,7 +40,6 @@
 
 % JSys
 \usepackage{fancyhdr}
-
 %
 % USENIX wants margins of: 0.75" sides, 1" bottom, and 1" top.
 % 0.33" gutter between columns.
@@ -51,72 +49,30 @@
 \setlength{\columnsep}{0.33in}
 \setlength{\textwidth}{7.00in}
 
+\setlength{\voffset}{-0.4in}
 \setlength{\topmargin}{0.0in}
+\setlength{\headheight}{12pt}
+\setlength{\headsep}{24pt}
+\setlength{\footskip}{40pt}
 
-\setlength{\headheight}{0.0in}
-
-\setlength{\headsep}{0.0in}
+\setlength{\marginparsep}{0pt}
+\setlength{\marginparwidth}{0pt}
 
 \addtolength{\oddsidemargin}{-0.25in}
 \addtolength{\evensidemargin}{-0.25in}
 
-% Define iclrfinal, set to true if iclrfinalcopy is defined
+% Define ifjsysfinal, set to true if jsysfinalcopy is defined
 \newif\ifjsysfinal
 \jsysfinalfalse
 \def\jsysfinalcopy{\jsysfinaltrue}
-\font\iclrtenhv  = phvb at 8pt
 
-% USENIX wants no page numbers for camera-ready papers, so that they can
-% number them themselves.  But submitted papers should have page numbers
-% for the reviewers' convenience.
-% 
-%
+% Headers and footers
 \pagestyle{fancy}
-% This ensures the header doesn't say anything else
 \fancyhf{}
-
-\if 0
-%
-% USENIX titles are in 14-point bold type, with no date, and with no
-% change in the empty page headers.  The whole author section is 12 point
-% italic--- you must use {\rm } around the actual author names to get
-% them in roman.
-%
-\def\maketitle{\par
- \begingroup
-   \renewcommand\thefootnote{\fnsymbol{footnote}}%
-   \def\@makefnmark{\hbox to\z@{$\m@th^{\@thefnmark}$\hss}}%
-    \long\def\@makefntext##1{\parindent 1em\noindent
-            \hbox to1.8em{\hss$\m@th^{\@thefnmark}$}##1}%
-   \if@twocolumn
-     \twocolumn[\@maketitle]%
-     \else \newpage
-     \global\@topnum\z@
-     \@maketitle \fi\@thanks
- \endgroup
- \setcounter{footnote}{0}%
- \let\maketitle\relax
- \let\@maketitle\relax
- \gdef\@thanks{}\gdef\@author{}\gdef\@title{}\let\thanks\relax}
-
-\def\@maketitle{\newpage
- \vbox to 2.5in{
- \vspace*{\fill}
- \vskip 2em
- \begin{center}%
-  {\Large\bf \@title \par}%
-  \vskip 0.375in minus 0.300in
-  {\large\it
-   \lineskip .5em
-   \begin{tabular}[t]{c}\@author
-   \end{tabular}\par}%
- \end{center}%
- \par
- \vspace*{\fill}
-% \vskip 1.5em
- }
-}
-\fi
+\fancyhead[l]{Submitted to the Journal of Systems Research (JSys)}
+\fancyhead[r]{\the\year{}}
+\fancyfoot[c]{\thepage}
+\renewcommand{\headrule}{}
 
 % Title stuff, taken from deproc.
 \def\maketitle{\par
@@ -136,6 +92,7 @@
 \gdef\@thanks{}\gdef\@author{}\gdef \@title{}\let\thanks\relax}
 
 \def\@maketitle{\newpage
+ \vspace*{-1in}
  \vbox to 2.5in{
  \vspace*{\fill}
  \vskip 2em
@@ -147,28 +104,33 @@
    \lineskip .5em
    \begin{tabular}[t]{c}\@author
    \end{tabular}\par}%
- \else
- \begin{tabular}[t]{l}\bf\rule{\z@}{24pt}Anonymous authors\\Paper
-   under double-blind review\end{tabular}%
- 
+  \else
+    \begin{tabular}[t]{c}\bf\rule{\z@}{24pt}Anonymous authors\\Paper
+    under double-blind review\end{tabular}%
+  \fi
  \end{center}%
  \par
  \vspace*{\fill}
-% \vskip 1.5em
  }
 }
 
+
 %
 % The abstract is preceded by a 12-pt bold centered heading
+%
 \def\abstract{\begin{center}%
 {\large\bf \abstractname\vspace{-.5em}\vspace{\z@}}%
 \end{center}}
 \def\endabstract{}
-
-\lhead{Under Submission to the Journal of Systems Research 2021}
 
 %
 % Main section titles are 12-pt bold.  Others can be same or smaller.
 %
 \def\section{\@startsection {section}{1}{\z@}{-3.5ex plus-1ex minus
     -.2ex}{2.3ex plus.2ex}{\reset@font\large\bf}}
+
+% 
+% Custom sections
+% 
+\newcommand{\acks}{\section*{Acknowledgement}}
+\newcommand{\artifacts}{\section*{Artifacts}}
