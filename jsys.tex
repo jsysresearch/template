@@ -3,10 +3,10 @@
 %
 % History:
 %
-% - TEMPLATE for the Journal of Systems Research, written for submissions to
-%   JSys in 2020 by Vijay Chidambaram, CS Department, University of Texas at
-%   Austin. This was originally the USENIX template, which was adapted with
-%   USENIX permission. Thanks!  
+% - TEMPLATE for the Journal of Systems Research, prepared for submissions to
+%   JSys in 2020 by Vijay Chidambaram (CS Department, University of Texas at
+%   Austin) and Romain Jacob (ETH Zurich). This was originally the USENIX
+%   template, which was adapted with USENIX permission. Thanks!  
 %
 % - TEMPLATE for Usenix papers, specifically to meet requirements of USENIX '05.
 %   originally a template for producing IEEE-format articles using LaTeX.
@@ -61,13 +61,10 @@
 \usepackage{tikz}
 \usepackage{amsmath}
 
-
-\usepackage{layout}
-
 % Uncomment the following line if you want the columns of the last page equal in
 % size. But note that doing so may cause issues with some document-generating
 % tools.
-\usepackage{flushend}
+% \usepackage{flushend}
 
 % inlined bib file -> only for making the file compilable on its own.
 %-------------------------------------------------------------------------------
@@ -223,7 +220,31 @@ The noindent at the start of this paragraph in its tex version makes it clear
 that it's a continuation of the preceding paragraph, as opposed to a new
 paragraph in its own right.
 
+\subsection{Tables with \texttt{booktabs}}
 
+JSys recommends using the \texttt{booktabs} package, which provides the \texttt{toprule}, \texttt{midrule}, and \texttt{bottomrule} commands with much nicer spacing around horizontal lines. Table's caption should be placed {below} the table; centering is optional. Table text font is set to \texttt{small} by default. \textbf{Do not} make it any smaller; larger is fine.
+
+The template also includes the \texttt{tabularx} and \texttt{multirow} packages, which should fill most table-related needs.
+
+\begin{table}
+  \centering
+  \begin{tabular}{llr}  
+    \toprule
+    \multicolumn{2}{c}{Item} \\
+    \cmidrule(r){1-2}
+    Animal    & Description & Price (\$) \\
+    \midrule
+    Gnat      & per gram    & 13.65      \\
+    &    each     & 0.01       \\
+    Gnu       & stuffed     & 92.50      \\
+    Emu       & stuffed     & 33.33      \\
+    Armadillo & frozen      & 8.99       \\
+    \bottomrule
+  \end{tabular}
+  \caption{Table's caption should be placed \textbf{below} the table. The \texttt{booktabs} package provides nicer spacing around lines.}
+  \label{tab:booktab_ex}
+\end{table}
+  
 \subsection{LaTeX-ing Your TeX File}
 %-----------------------------------
 
@@ -249,6 +270,7 @@ In particular, papers introducing new software solutions, tools, or benchmarks
 \textbf{must} make their software available. Software artifacts must be usable
 by a third-party without author help for the paper to be accepted. The JSys
 Artifact Evaluation Board will ensure this is the case.
+
 
 %-------------------------------------------------------------------------------
 \bibliographystyle{plain}

@@ -38,7 +38,14 @@
   urlcolor={blue!70!black}
 }
 
-% JSys
+% Table
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{tabularx}
+\BeforeBeginEnvironment{tabular}{\small}
+\AfterEndEnvironment{tabular}{}
+
+% Formatting 
 \usepackage{fancyhdr}
 %
 % USENIX wants margins of: 0.75" sides, 1" bottom, and 1" top.
@@ -72,7 +79,6 @@
 \fancyhead[l]{Submitted to the Journal of Systems Research (JSys)}
 \fancyhead[r]{\the\year{}}
 \fancyfoot[c]{\thepage}
-\renewcommand{\headrule}{}
 
 % Title stuff, taken from deproc.
 \def\maketitle{\par
