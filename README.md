@@ -7,7 +7,9 @@ This template was adapted from the USENIX template with their permission. Thanks
 
 ## Version
 
-+ 1.0.1: (current)
-    + Added `booktab` example
-    + `hrule` separating the header
++ 1.0.2: (current)
+  + Added missing dependency
++ 1.0.1:
+  + Added `booktab` example
+  + `hrule` separating the header
 + 1.0: First release

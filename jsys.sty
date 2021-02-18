@@ -38,11 +38,13 @@
   urlcolor={blue!70!black}
 }
 
+% Additional hooks (provide e.g. BeforeBeginEnvironment)
+\usepackage{etoolbox}
+
 % Table
 \usepackage{booktabs}
 \usepackage{multirow}
 \usepackage{tabularx}
-\usepackage{etoolbox}
 \BeforeBeginEnvironment{tabular}{\small}
 \AfterEndEnvironment{tabular}{}
 
