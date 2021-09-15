@@ -79,7 +79,6 @@
 % Headers and footers
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[l]{Submitted to the Journal of Systems Research (JSys)}
 \fancyhead[r]{\the\year{}}
 \fancyfoot[c]{\thepage}
 
@@ -109,13 +108,15 @@
   {\Large\bf \sc \@title \par}%
   \vskip 0.375in minus 0.300in
   \ifjsysfinal
+  \fancyhead[l]{Journal of Systems Research (JSys)}
   {\large\it
    \lineskip .5em
    \begin{tabular}[t]{c}\@author
    \end{tabular}\par}%
   \else
     \begin{tabular}[t]{c}\bf\rule{\z@}{24pt}Anonymous authors\\Paper
-    under double-blind review\end{tabular}%
+      under double-blind review\end{tabular}%
+    \fancyhead[l]{Submitted to the Journal of Systems Research (JSys)}
   \fi
  \end{center}%
  \par
