@@ -68,6 +68,7 @@
 \usepackage{fancyhdr}
 
 \usepackage{float}
+\usepackage{hyperref}
 
 %-------------------------------------------------------------------------------
 \begin{filecontents}{\jobname.bib}
@@ -93,13 +94,16 @@
 \pagestyle{fancy}
 \renewcommand{\headrulewidth}{1pt}
 \renewcommand{\footrulewidth}{1pt}
+% no page numbers
+\renewcommand{\thepage}{}
 
 % Turn on final version for JSys
 \jsysfinaltrue
 
 % JSys date, issue, and volume here
 %-------------------------------------------------------------------------------
-\lhead{Journal of Systems Research, Volume 1, Issue 1, Sep 2021} 
+\renewcommand{\lhead}{Journal of Systems Research}
+\rhead{Volume 1, Issue 1, Sep 2021}
 %-------------------------------------------------------------------------------
 
 %-------------------------------------------------------------------------------
@@ -155,7 +159,7 @@ ORCID
     - Reviewer C, Institution\\
     - Reviewer D, Institution\\
     
-    {\Large \bf Artifact}\\
+    {\Large \bf Artifacts}\\
 
     This artifact has been independently evaluated by the Artifact Evaluation Committee led by
     % insert Artifact Eval Area Chair name here %
@@ -163,13 +167,27 @@ ORCID
     % TODO: Add link to artifact
     The artifact is publicly available at: Link to to be added\\
 
-    {\Large \bf Open Reviews}\\
+    {\Large \bf Reviews}\\
 
     % TODO: add link to open review page
     Anonymized reviews are publicly available at: Link to be added\\
+
+    {\Large \bf Copyright and License}\\
+
+    Licensed under Creative Common License CC-BY-NC. Copyright retained by the authors. 
+
     
   }%
 
+  % \begin{figure}[!h]
+  \vspace{10pt}
+
+  \href{https://creativecommons.org/licenses/by-nc/4.0/}{
+    \includegraphics[scale=0.1]{license}
+  }
+    %\end{figure}
+
+  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \end{document}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
