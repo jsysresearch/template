@@ -82,7 +82,10 @@
 \end{filecontents}
 
 % enable this for the camera-ready version
-\jsysfinaltrue
+%\jsysfinaltrue
+
+% for ORCID
+\usepackage{orcidlink}
 
 %-------------------------------------------------------------------------------
 \begin{document}
@@ -94,12 +97,16 @@
 % make title bold and 14 pt font (Latex default is non-bold, 16 pt)
 \title{Template for Journal of Systems Research }
 
-%for single author (just remove % characters)
-\author{{\rm Your N.\ Here}\\
-  Your Institution
+% for single author (just remove % characters)
+% ORCID links to two nobel laureates for now, please change
+\author{
+  {\textsc{John Doe}}\orcidlink{0000-0002-2218-5750}\\
+  Your Institution\\
+  Your Email
   \and
-  {\rm Second Name}\\
-  Second Institution
+  {\textsc{John Doe}}\orcidlink{0000-0001-7985-6087}\\
+  Second Institution\\
+  Your Email
   % copy the following lines to add more authors \and {\rm Name}\\
   % Name Institution
 } % end author
