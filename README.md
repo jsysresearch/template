@@ -7,7 +7,10 @@ This template was adapted from the USENIX template with their permission. Thanks
 
 ## Version
 
-+ 1.0.2: (current)
++ 1.0.3: (current)
+  + Switched to `plainurl` bib style
+  + Modified DOI display defaults to be compatible with [Crossref requirements](https://www.crossref.org/display-guidelines/)
++ 1.0.2:
   + Added missing dependency
 + 1.0.1:
   + Added `booktab` example
